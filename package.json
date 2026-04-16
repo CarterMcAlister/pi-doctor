@@ -1,0 +1,46 @@
+{
+  "name": "pi-doctor",
+  "version": "0.1.0",
+  "description": "Analyze Pi agent sessions for quality signals, sentiment drift, and behavioral anti-patterns.",
+  "type": "module",
+  "bin": {
+    "pi-doctor": "./src/cli.ts"
+  },
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "pi",
+    "pi-agent",
+    "sessions",
+    "analysis",
+    "transcript",
+    "sentiment",
+    "agents",
+    "llm"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.3",
+    "sentiment": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "bun": ">=1.0.0",
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "bun test",
+    "start": "bun ./src/cli.ts",
+    "typecheck": "bunx tsc --noEmit -p tsconfig.json"
+  }
+}

@@ -1,0 +1,16 @@
+{"type":"session","version":3,"id":"test-session-123","timestamp":"2026-04-16T10:00:00.000Z","cwd":"/tmp/pi-doctor-demo"}
+{"type":"message","timestamp":"2026-04-16T10:00:05.000Z","message":{"role":"user","content":[{"type":"text","text":"Please update the file and keep going until it is fixed."}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:10.000Z","message":{"role":"assistant","content":[{"type":"text","text":"I am checking the file first."},{"type":"toolCall","id":"call-read-1","name":"read","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:11.000Z","message":{"role":"toolResult","toolCallId":"call-read-1","toolName":"read","content":[{"type":"text","text":"const value = 1;"}],"isError":false}}
+{"type":"message","timestamp":"2026-04-16T10:00:15.000Z","message":{"role":"user","content":[{"type":"text","text":"wait, only touch src/index.ts"}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:18.000Z","message":{"role":"assistant","content":[{"type":"toolCall","id":"call-edit-1","name":"edit","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:19.000Z","message":{"role":"toolResult","toolCallId":"call-edit-1","toolName":"edit","content":[{"type":"text","text":"Edit failed: oldText not found"}],"isError":true}}
+{"type":"message","timestamp":"2026-04-16T10:00:22.000Z","message":{"role":"assistant","content":[{"type":"toolCall","id":"call-edit-2","name":"edit","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:23.000Z","message":{"role":"toolResult","toolCallId":"call-edit-2","toolName":"edit","content":[{"type":"text","text":"Edit failed: oldText not found"}],"isError":true}}
+{"type":"message","timestamp":"2026-04-16T10:00:26.000Z","message":{"role":"assistant","content":[{"type":"toolCall","id":"call-edit-3","name":"edit","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:27.000Z","message":{"role":"toolResult","toolCallId":"call-edit-3","toolName":"edit","content":[{"type":"text","text":"Edit failed: oldText not found"}],"isError":true}}
+{"type":"message","timestamp":"2026-04-16T10:00:30.000Z","message":{"role":"assistant","content":[{"type":"toolCall","id":"call-edit-4","name":"edit","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:31.000Z","message":{"role":"toolResult","toolCallId":"call-edit-4","toolName":"edit","content":[{"type":"text","text":"Applied change"}],"isError":false}}
+{"type":"message","timestamp":"2026-04-16T10:00:34.000Z","message":{"role":"assistant","content":[{"type":"toolCall","id":"call-edit-5","name":"edit","arguments":{"path":"src/index.ts"}}]}}
+{"type":"message","timestamp":"2026-04-16T10:00:35.000Z","message":{"role":"toolResult","toolCallId":"call-edit-5","toolName":"edit","content":[{"type":"text","text":"Applied change"}],"isError":false}}
+{"type":"message","timestamp":"2026-04-16T10:00:38.000Z","message":{"role":"user","content":[{"type":"text","text":"no, stop changing that block and fix the bug instead"}]}}

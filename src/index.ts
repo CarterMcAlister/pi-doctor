@@ -1,0 +1,12 @@
+export { parseTranscriptFile, extractUserMessages, extractToolUses, extractToolErrors, countInterrupts } from "./parser";
+export { discoverProjects, discoverSessions, indexAllProjects, resolveSessionFile, findLatestSession } from "./indexer";
+export { generateReport, formatReportMarkdown, formatReportJson } from "./reporter";
+export { analyzeSessionSentiment, sentimentToSignals } from "./signals/sentiment";
+export { detectAbandonment } from "./signals/abandonment";
+export { detectThrashing } from "./signals/thrashing";
+export { detectErrorLoops } from "./signals/error-loops";
+export { detectToolInefficiency } from "./signals/tool-efficiency";
+export { detectBehavioralSignals } from "./signals/behavioral";
+export { generateSuggestions, generateAgentsRules } from "./suggestions";
+export { saveModel, loadModel, checkSession } from "./model";
+export { buildSessionTimeline, renderTimeline, renderHealthBar, renderCheckOutput, renderAnalyzeOutput } from "./viz";
