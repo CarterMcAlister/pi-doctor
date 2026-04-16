@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 import { Command } from "commander";
+import packageJson from "../package.json";
 import { loadModel, saveModel, checkSession } from "./model";
 import { generateReport, formatReportJson } from "./reporter";
 import { generateAgentsRules } from "./suggestions";
@@ -42,7 +43,7 @@ const program = new Command();
 program
   .name("pi-doctor")
   .description("Diagnose Pi agent sessions. Analyzes transcript history for behavioral anti-patterns and generates AGENTS.md guidance.")
-  .version("0.1.0")
+  .version(packageJson.version)
   .argument("[session]", "Session ID or .jsonl path to check a specific Pi session")
   .option("-p, --project <path>", "Filter to a specific project path / cwd")
   .option("--rules", "Output generated AGENTS.md rules")

@@ -11,7 +11,7 @@ npx pi-doctor
 Or clone and run it locally:
 
 ```bash
-bun ./src/cli.js
+bun ./src/cli.ts
 ```
 
 ## Usage
@@ -77,3 +77,22 @@ Writes a model to `.pi-doctor/`:
 
 - `model.json`: signal baselines and project profiles
 - `guidance.md`: agent-readable rules for AGENTS.md inclusion or prompt injection
+
+## Automated npm publishing
+
+This repo includes `.github/workflows/publish.yml`.
+
+- Every push to `main` runs tests and typechecking.
+- If they pass, GitHub Actions increments `package.json` with a patch version bump.
+- The workflow publishes that version to npm, then commits the version bump back to `main` and creates a matching git tag.
+
+### Required GitHub secret
+
+Add this repository secret before relying on the workflow:
+
+- `NPM_TOKEN`: an npm access token with permission to publish the package named in `package.json`
+
+Notes:
+
+- The workflow publishes whatever package name is currently in `package.json`.
+- If you want a scoped package such as `@cartermcalister/pi-doctor`, change the `name` field before pushing to `main`.
