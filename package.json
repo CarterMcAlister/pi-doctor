@@ -1,6 +1,6 @@
 {
   "name": "pi-doctor",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Analyze Pi agent sessions for quality signals, sentiment drift, and behavioral anti-patterns.",
   "type": "module",
   "repository": {
