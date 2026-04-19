@@ -78,3 +78,7 @@ Writes a model to `.pi-doctor/`:
 - `model.json`: signal baselines and project profiles
 - `guidance.md`: agent-readable rules for AGENTS.md inclusion or prompt injection
 
+
+## Credits
+
+Adapted from [claude-doctor](https://www.npmjs.com/package/claude-doctor)
